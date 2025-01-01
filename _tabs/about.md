@@ -5,49 +5,53 @@ order: 4
 ---
 
 Hello my name is Josh, and here I'll be posting update on the various projects and homelab technologies I'm working with.  
-This site is hosted using [GitHub Pages][github-pages] with a fork of a [Jekyll][jekyll] theme as the main HTML coding.  
+This site is hosted using [GitHub Pages][github-pages] using a template of the [Chirpy][chirpy] theme.  
 
-Current *8/1/24* Server Setup is a:  
-* Dell Poweredge R720:  
-  - Dual 8 Core Xeon E5-2665 2.4GHz CPUs
-    - (plans are to lower overall TDP to dual 10 Core Xeon E5-2648L V2 1.9GHZ or a single 12 Core Xeon E5-2695 V2 2.4GHz)
-  - 64Gb DDR3 1600MT/s ECC RAM
-    - (also plan to get more because it's so cheap)
-  - 2 x 256Gb Sata SSDs running in a mirrored RAID 1 config
-  - 4 x 4Tb Sata HDDs running in RAID 1 as well
-  - 4 x 1Gb port NIC
-  - PERC H710p Mini RAID controller flashed into IT mode
+My current homelab as of 1/1/2025 is:
 
-  - Current Services:
-    - [PiHole DNS][pihole]
-    - [DuckDNS][duckdns]
-    - [Portainer][portainer]
-    - ~~GNS3~~ (switched to EVE-NG for now)
-    - [Wireguard][wireguard]
-    - [Glances][glances]
-    - [Dashy][dashy]
-    - [EVE-NG][eve-ng]
-    - [Active Directory][ad] Through a Windows Server 2019 Test VM
-* Main computer/[LLama3][llama3] host with a Ryzen 5 5600x, Radeon RX 6600XT, 32GB DDR4 RAM, 1TB NVME SSD  
-
-Current Networking Hardware:  
-* Cisco SG300-10 1Gb 10 port manage switch
-* TP-Link tl-sg105e 1GB 5 port managed switch
-* TP-Link POE injector
-* TP-Link EAP223
-* APC UPS BE550G
+Rack: 
 * Rosewill 25U 4 post adjustable rack
 
+Servers:
+* Dell R720
+  * CPU: 1x 10-Core Intel Xeon E5-2680V2 @ 2.8GHz
+  * RAM: 96GB DDR3 ECC @ 1600MHz
+  * Storage:
+    * 2x 256GB SATA SSD (RAID1 &#124; OS & Backup 1) 
+    * 2x 4TB SATA HDD (RAID1 &#124; VMs, IOSes, Backup 2)
+  * OS: [Proxmox VE][proxmox]
+  * Lab Environments:
+    * [Active Directory][ad]
+    * [Eve-NG][eve-ng]
+  * Services:
+    * [WireGuard][wireguard]
+    * [Docker][docker]:
+      * [Portainer][portainer]:
+        * [Dashy][dashy]
+        * [DuckDNS][duckdns]
+        * [NGINX][nginx]
+        * [Glances][glances]
+    * [PiHole][pihole]
+
+Networking:  
+* 2x Cisco Catayst 3850 48P for testing
+* Cisco SG300-10 10p switch
+* TP-Link tl-sg105e 5p switch
+* TP-Link POE injector
+* TP-Link EAP223
+
+Power:
+* APC ES 650 UPS
+* Tripplite 120V 5-15 PDU
+  
 # Future Plans
-- [ ] Organize my current homelab setup better
-- [x] ~~Set up a dashboard ([Dashy?](https://dashy.to/)) for quick access all my services~~ (5/12/24)  
-- [ ] Learn more about [Ansible](https://www.ansible.com/) and [Terraform](https://www.terraform.io/) and see if deploying them would be useful  
+- [ ] Create a network diagram to easily display what services and systems I use
+- [ ] Potentially move towards more recent, lower powered servers and keep the R720 only for testing purposes
+- [ ] Learn more about [Ansible](https://www.ansible.com/) and [Terraform](https://www.terraform.io/) and see if deploying them would be useful
   - [ ] Learn YAML  
-- [ ] [Ollama](https://ollama.com/library/llama3) seems interesting, but I'm unsure if I could reasonably run it 24/7 with my current resources  
-- [x] Get a larger (> 8 port) POE+ switch
-  - [ ] Potentially move away from decentralized security and utilize a self-hosted NVR
-- [ ] Create a NAS machine(s)
-- [ ] Locally create SSL certificates for my services
+- [ ] Potentially move away from 3rd party cloud based security and utilize self-hosted security and storage management
+- [ ] Create a NAS
+- [ ] Locally create SSL certificates
 - [ ] Get a standalone PFsense/OpenWRT/OPNsense device
 
 [github-pages]: https://pages.github.com/
@@ -61,4 +65,7 @@ Current Networking Hardware:
 [duckdns]:      https://www.duckdns.org/
 [ad]:           https://gaviolajosh.github.io/active-directory/
 [glances]:      https://gaviolajosh.github.io/glances/
-
+[chirpy]:       https://github.com/cotes2020/jekyll-theme-chirpy
+[nginx]:        https://nginxproxymanager.com/
+[docker]:       https://www.docker.com/
+[proxmox]:      https://www.proxmox.com/en/proxmox-virtual-environment/overview
