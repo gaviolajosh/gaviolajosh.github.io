@@ -51,7 +51,7 @@ Current Networking Hardware:
 - [ ] Get a standalone PFsense/OpenWRT/OPNsense device
 
 [github-pages]: https://pages.github.com/
-[jekyll]:       http://jekyllthemes.org/
+[jekyll]:       https://jekyllthemes.org/
 [pihole]:       https://gaviolajosh.github.io/pihole-setup/
 [wireguard]:    https://gaviolajosh.github.io/wireguard-setup/
 [dashy]:        https://gaviolajosh.github.io/dashy-setup/
