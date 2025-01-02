@@ -6,14 +6,13 @@ tags: [homelab, R720, "7010"]
 ---
 
 # Let this be a warning when buying second-hand gear because the stability might not be all the way there anymore. 
-
-That failed spectacularly!   
-The Optiplex 7010 caught fire!
+ 
+The Optiplex 7010 caught fire! (just a few components on the motherboard started smoking really)
 
 The actual clustering configuration itself was perfect. 
 I was able to get a stable 2-node cluster while maintaining quorum towards the main node. 
 This allowed me to separate my 24/7 mission critical services between my testing/sandbox services that I only needed sometimes, which was exactly what I wanted. 
-I just didn't factor in the 7010's PSU failing and catching fire is all.
+I just didn't factor in the 7010's PSU failing.
 
 
 
