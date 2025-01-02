@@ -25,4 +25,4 @@ nano /opt/unetlab/html/templates/intel/c3725.yml
 ```
 Now all my future nodes will have the lowest CPU usage on the VM as tested.
 
-![alt text](/assets/2024-10-13-dynamips.png)
+![alt text](/assets/images/2024-10-13-dynamips.png)
